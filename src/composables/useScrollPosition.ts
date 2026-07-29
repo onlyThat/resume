@@ -1,0 +1,20 @@
+import { ref, onMounted, onUnmounted } from 'vue'
+
+export function useScrollPosition() {
+  const scrollY = ref(0)
+
+  function onScroll() {
+    scrollY.value = window.scrollY
+  }
+
+  onMounted(() => {
+    window.addEventListener('scroll', onScroll, { passive: true })
+    onScroll()
+  })
+
+  onUnmounted(() => {
+    window.removeEventListener('scroll', onScroll)
+  })
+
+  return { scrollY }
+}
