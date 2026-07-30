@@ -176,13 +176,13 @@ const achievements: Achievement[] = [
 
 const projects: Project[] = [
   {
-    name: '个人小程序',
-    period: '2026.07 - 至今',
+    name: '挖嗨活小程序',
+    period: '2026.07',
     badge: '独立开发',
     icon: 'fas fa-mobile-alt',
     role: '前端工程师',
     description:
-      '独立开发的个人小程序，集成合同签署、用户实名认证等核心功能，涵盖OCR识别、电子签约全流程。',
+      '集成合同签署、用户实名认证等核心功能，涵盖OCR识别、电子签约全流程。',
     duties: [
       '全流程负责合同签署系统开发，通过实名认证到OCR识别实现全链路签约流程',
       '构建用户认证系统，含身份核验、人脸比对、活体展示等关键功能',
