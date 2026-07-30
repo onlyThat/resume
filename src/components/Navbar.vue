@@ -37,17 +37,6 @@ function closeMobileMenu() {
   document.body.style.overflow = ''
 }
 
-function scrollToSection(href: string) {
-  const id = href.replace('#', '')
-  const el = document.getElementById(id)
-  if (el) {
-    const offset = 80
-    const top = el.offsetTop - offset
-    window.scrollTo({ top, behavior: 'smooth' })
-  }
-  closeMobileMenu()
-}
-
 function handleDownload() {
   window.print()
 }
@@ -72,9 +61,9 @@ onUnmounted(() => {
     <ul class="nav-links">
       <li v-for="link in sections" :key="link.href">
         <a
-          :href="link.href"
-          :class="{ active: activeSection === link.href.replace('#', '') }"
-          @click.prevent="scrollToSection(link.href)"
+            :href="link.href"
+            :class="{ active: activeSection === link.href.replace('#', '') }"
+            @click="closeMobileMenu"
         >
           {{ link.label }}
         </a>
@@ -89,10 +78,10 @@ onUnmounted(() => {
         <i class="fas fa-download"></i>
       </button>
       <button
-        class="nav-toggle"
-        :class="{ active: isMobileMenuOpen }"
-        aria-label="Toggle menu"
-        @click="toggleMobileMenu"
+          class="nav-toggle"
+          :class="{ active: isMobileMenuOpen }"
+          aria-label="Toggle menu"
+          @click="toggleMobileMenu"
       >
         <span></span><span></span><span></span>
       </button>
@@ -101,7 +90,7 @@ onUnmounted(() => {
   <div class="mobile-menu" :class="{ active: isMobileMenuOpen }">
     <ul>
       <li v-for="link in sections" :key="link.href">
-        <a :href="link.href" @click.prevent="scrollToSection(link.href)">{{ link.label }}</a>
+        <a :href="link.href" @click="closeMobileMenu">{{ link.label }}</a>
       </li>
     </ul>
   </div>
