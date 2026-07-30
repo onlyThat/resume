@@ -18,7 +18,7 @@ export const resumeData: ResumeData = {
 
   education: [
     {
-      period: '2025.03 - 至今',
+      period: '2024.03 - 2026.07',
       school: '天津理工大学',
       major: '计算机科学与技术',
       degree: '本科',
