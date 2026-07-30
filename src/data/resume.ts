@@ -187,11 +187,11 @@ export const resumeData: ResumeData = {
 
   projects: [
     {
-      name: '个人小程序',
-      period: '2026.07 - 至今',
+      name: '挖嗨活小程序',
+      period: '2026.07',
       role: '前端工程师',
       description:
-        '独立开发的个人小程序，集成合同签署、用户实名认证等核心功能，涵盖OCR识别、电子签约全流程。',
+        '集成合同签署、用户实名认证等核心功能，涵盖OCR识别、电子签约全流程。',
       icon: 'fas fa-mobile-alt',
       badge: '独立开发',
       featured: true,
