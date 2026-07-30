@@ -74,6 +74,15 @@ export function observeElements(selector: string, options?: IntersectionObserver
       observer.observe(el)
     })
 
+    // 兜底：3秒后强制显示所有未被观察到的元素，避免内容始终不可见
+    setTimeout(() => {
+      elements.forEach((el) => {
+        if (!el.classList.contains('visible')) {
+          el.classList.add('visible')
+        }
+      })
+    }, 3000)
+
     onUnmounted(() => {
       observer.disconnect()
     })
